@@ -1,0 +1,13 @@
+# Build and artifact proof
+
+Use the existing Vite/React Router and Workers build integration. Do not replace it with a bespoke Node bundler or install a second build system merely because a template uses one. Type-check before accepting a transform as safe; verify actual browser and server outputs separately. Check every entry point, public asset, server export, dynamic import, and required local resource against the produced artifact.
+
+Maintain one reviewed version source where a version is required. Derive build metadata through the existing system and prove the same value reaches manifests and outputs. Never inline all process.env or Worker bindings into a browser define map. A build-time version is public data; a secret is not. A transform flag cannot make a server dependency safe for the browser.
+
+Node build modules can use node-prefixed builtins and ESM file-relative resolution for their own resources. They must not appear transitively in browser code. A native addon cannot become Worker compatible merely by being marked external. The runtime still needs a supported implementation. Optional dependencies require an explicit availability result and safe reduced capability, not an accidental import crash or silent security bypass. Do not download models, invoke native rebuilds, or select an embedding or parser provider here.
+
+Keep an explicit allowlist of deliverable files, expected outputs, and required legal notices. Inspect built bytes, output/import paths, source maps, secrets/config leakage, missing assets, accidental source/test inclusions, and stale previous output. Presence alone does not prove the file is from this build. Record hashes and the exact tool/config inputs. Compare a clean and repeat build only when authorized and meaningful.
+
+Lifecycle scripts can execute code during install, prepare, prepack, or package inspection. A 'dry run' label does not make an arbitrary project script harmless. The implementation role may propose a script patch but cannot install hooks, run package lifecycle code, or publish. This app ships as a deployment artifact; npm publish, public scoped package metadata, cross-harness install directories, and detached hook bundles are not selected delivery paths.
+
+For a new application entry, document source, built output, runtime, owner, required configuration, packaging inclusion, negative tests, and consumer path. Test the real production entry, not a copied helper. A missing file, wrong hash, unresolved import, or secret in the artifact blocks acceptance. Release proof must match the final artifact after all changes; an older green report is historical evidence only.

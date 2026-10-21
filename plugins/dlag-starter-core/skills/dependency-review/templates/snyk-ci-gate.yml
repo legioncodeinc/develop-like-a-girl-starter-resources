@@ -1,0 +1,20 @@
+# Optional STEP PROPOSAL only when Snyk is already selected and authorized.
+# Fill a reviewed immutable action SHA and use the existing configured secret
+# reference; never retrieve or echo its value. No service/config is enabled here.
+# Match installed CLI/version, actual supported flags and target policy first.
+- name: Review high and critical dependency findings
+  uses: snyk/actions/node@REVIEWED_IMMUTABLE_COMMIT_REQUIRED
+  continue-on-error: false
+  env:
+    SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+  with:
+    args: >-
+      --severity-threshold=high
+      --fail-on=upgradable
+      --json-file-output=snyk-results.json
+# --fail-on=upgradable can leave severe unfixable findings nonblocking.
+# A separate existing policy must retain/escalate them; success is not clearance.
+# Never suppress the underlying JSON result or treat a waived exit as a clean scan.
+# Optional retention requires approved private destination/access/retention and
+# reviewed immutable upload-action revision. No automatic public artifact upload.
+# Python/Go scanner installation examples are outside the selected Starter stack.

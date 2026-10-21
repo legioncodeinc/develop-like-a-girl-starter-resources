@@ -1,0 +1,13 @@
+# Async operations, batching, and bounded concurrency
+
+Await operations the response depends on. A floating promise can reject unseen or be cancelled when a request ends. A catch attached to a promise addresses rejection handling, not task durability. Workers request-lifetime mechanisms are not Node detached processes, and Starter selects no background job provider. Keep required persistence in the request's awaited path unless an actual approved durable architecture exists.
+
+Prefer one bounded data query for a list of related IDs over serial per-ID reads. Preserve intentional ordering dependencies; replacing every loop with Promise.all can make a transaction or rate-limited mutation wrong. For genuinely independent operations, explicitly bound both queued work and in-flight operations. Use a per-operation budget based on the actual provider, not an inherited arbitrary constant.
+
+The local bounded-map example validates positive integer concurrency, caps input length, preserves result order, and uses at most that many workers. Its rejection semantics are fail-fast at the returned promise level; already running operations continue. It does not cancel them or provide global cross-isolate throttling. A module semaphore only coordinates the current process/isolate, never every deployed Worker. Service-wide limits require an actual architecture decision outside this guide.
+
+Promise.all rejects on the first failure but does not undo completed writes. Promise.allSettled is appropriate only when partial success is permitted, every rejected result is inspected, and the caller reports partial outcome. Never retry the entire batch blindly after one item failed. Use idempotency or deduplication where the selected API supports it.
+
+Retry only transient failures for an operation proven safe to repeat. Bound attempts, total elapsed time, delay, response body bytes, and queue size. Respect documented rate-limit timing. Authentication/authorization errors are not generic retry targets. An uncertain mutation may already have committed. A second retry layer multiplying the client's existing attempts can exceed the request budget. Test exact attempts, nonretryable failure, exhaustion, timeout, and abort.
+
+The request abort signal, provider timeout, and framework cancellation path need explicit propagation. Do not claim cancellation from Promise.race alone: it can stop waiting while the underlying fetch or write continues. A finite provider set or explicit fixed origin prevents user input becoming arbitrary outbound network access. Credentialed requests need redirect handling that does not forward credentials to another origin.

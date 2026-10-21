@@ -1,0 +1,18 @@
+# Size work and forecast conditional delivery
+
+Diagnose the estimation problem before choosing a technique. Keep relative size, a conditional calendar scenario, a historical-data forecast and a negotiated commitment distinct. Read the complete [guide map](README.md).
+
+1. Read [principles](guides/00-principles.md), [five-category diagnosis](guides/01-diagnosis.md) and [historical evidence limits](research/research-summary.md). Ask whether stakeholders treat estimates as promises before recommending a framework.
+2. Use [relative sizing](guides/02-relative-sizing.md) for reference stories, T-shirt sizing and Planning Poker. Points express relative complexity; they do not directly predict dates.
+3. Use [NoEstimates](guides/03-noestimates.md) only with the stated reliable-history, small-item and uncertainty-acceptance prerequisites. Preserve the evidence gap and culture critique.
+4. Use [Monte Carlo](guides/04-monte-carlo.md) for sampling historical throughput and explaining P50/P85/P95. Sufficient relevant history and validation are necessary; a percentile never becomes a stakeholder commitment automatically.
+5. Use [planning-fallacy remedies](guides/05-planning-fallacy.md) to expose happy-path omissions, reference-class evidence, uncertainty and premortem questions.
+6. For one person at N hours daily, use [AI-assisted forecasting](guides/06-ai-assisted-forecast.md), [worksheet](references/ai-assisted-forecast/worksheet.md), [example](examples/ai-assisted-forecast.md) and optional [Decimal calculator](scripts/forecast-ai-assisted.py). Retain engineering, learning, verification and rework; weekdays; independent release gates; direct cash and separate owner-time value. Without calibration, return conditional ranges and one measured-slice checkpoint, no probability or universal AI multiplier.
+7. For total cash, use [the build-budget method](guides/07-total-build-budget.md), [invoice/credit worksheet](references/build-budget/worksheet.md) and [fictional cases](references/build-budget/fictional-examples.md). Reconcile periods, quotas, credits, prepayments, paid work and first operation once. Unknown rates/quantities/periods stay gaps; withhold a complete total when material inputs are unknown.
+8. Deliver the [advisory worksheet](templates/estimation-advisory.md) with diagnosis, one recommendation, evidence, conditional result, explicit omissions and calibration checkpoint.
+
+This private route belongs to [Project Planning](../SKILL.md). The paired Specialist reads supplied safe files and saves only expressly requested local Markdown. Check destinations, preserve existing differing documents unless editing was requested, read results back and report actual paths. Saving a requested draft needs no repeated permission.
+
+The calculator and [tests](scripts/test_forecast_ai_assisted.py) use Python standard library only. Execution and JSON writes need a suitably authorized caller; the planning Specialist has no shell. Optional third-party tools are historical references, not installation or account instructions. Do not install, upload project data, access credentials/invoices, make paid/model/provider calls, buy subscriptions, configure budgets, write application code or commit/push from this workflow.
+
+Starter's accepted stack remains unchanged. Business Tools such as Operating Cost, Services Quoting and Unit Economics are unavailable packaged specialists. Keep the complete invoice arithmetic method in the local worksheets; unresolved ordering, tiers, currency, rates or commercial decisions require an actually designated qualified owner. No missing specialist invocation or current vendor price is invented.

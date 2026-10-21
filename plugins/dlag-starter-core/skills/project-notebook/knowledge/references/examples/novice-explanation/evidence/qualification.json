@@ -1,0 +1,24 @@
+{
+  "specimen_status": "NOT_RUN; qualification worksheet",
+  "checks": [
+    {
+      "kind": "source hash/locator/quote",
+      "result": "NOT_RUN"
+    },
+    {
+      "kind": "claim versus explanation semantic comparison",
+      "result": "NOT_RUN"
+    },
+    {
+      "kind": "local link/resource closure",
+      "result": "NOT_RUN"
+    }
+  ],
+  "unproven": [
+    "reader comprehension",
+    "native dispatch",
+    "rendered artifact inspection",
+    "application/provider execution"
+  ],
+  "source_locator_root": "knowledge resource root"
+}

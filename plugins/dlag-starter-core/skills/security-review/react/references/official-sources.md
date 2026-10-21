@@ -1,0 +1,38 @@
+# React primary reference index
+
+The check files link each identifiable primary source beside the claim. These locations support review; they are not evidence of a current page fetch, current advisory match or implemented control. The author consulted official React raw-HTML and Server Function security documentation with a documentation connector on October 20, 2026. The 2026-09-30 advisory snapshot is retained offline and deliberately labelled as candidates, not refreshed current data.
+
+- [Browser Trusted Types](https://developer.mozilla.org/en-US/docs/Web/API/Trusted_Types_API)
+- [Conditional Vite RSC plugin documentation](https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-rsc)
+- [Conditional Vite RSC primary repository](https://github.com/vitejs/vite-plugin-react)
+- [Conditional Waku primary advisories](https://github.com/wakujs/waku/security/advisories)
+- [DOMPurify security and supported server DOMs](https://github.com/cure53/DOMPurify)
+- [Gitleaks detector patterns, not issuance proof](https://github.com/gitleaks/gitleaks/blob/master/config/gitleaks.toml)
+- [HTML parser security limits](https://github.com/remarkablemark/html-react-parser#is-this-xss-safe)
+- [MDX compiler primary advisory location](https://github.com/hashicorp/next-mdx-remote/security/advisories)
+- [OWASP CSRF controls](https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html)
+- [OWASP Top 10:2025](https://top10.owasp.org/2025/)
+- [OWASP XSS prevention](https://cheatsheetseries.owasp.org/cheatsheets/Cross_Site_Scripting_Prevention_Cheat_Sheet.html)
+- [OWASP browser storage and messaging](https://cheatsheetseries.owasp.org/cheatsheets/HTML5_Security_Cheat_Sheet.html)
+- [Provider SDK browser-key security](https://github.com/openai/openai-node#requirements)
+- [React CRA deprecation notice](https://react.dev/blog/2025/02/14/sunsetting-create-react-app)
+- [React DOM URL sanitizer implementation](https://github.com/facebook/react/blob/main/packages/react-dom-bindings/src/shared/sanitizeURL.js)
+- [React Router primary advisories](https://github.com/remix-run/react-router/security/advisories)
+- [React Server Function arguments and authorization](https://react.dev/reference/rsc/use-server)
+- [React critical RSC vulnerability announcement](https://react.dev/blog/2025/12/03/critical-security-vulnerability-in-react-server-components)
+- [React lint rule implementation limits](https://github.com/jsx-eslint/eslint-plugin-react)
+- [React package primary repository, verify actual installed package](https://github.com/facebook/react)
+- [React primary security advisories](https://github.com/facebook/react/security/advisories)
+- [React raw HTML security](https://react.dev/reference/react-dom/components/common#dangerously-setting-the-inner-html)
+- [React release history, qualify installed behavior](https://github.com/facebook/react/releases)
+- [React streaming server renderer](https://react.dev/reference/react-dom/server/renderToReadableStream)
+- [React taint API limits](https://react.dev/reference/react/experimental_taintObjectReference)
+- [Redux per-request SSR and serialization](https://redux.js.org/usage/server-rendering#security-considerations)
+- [Vite public environment rules](https://vite.dev/guide/env-and-mode)
+- [marked parser and advisories](https://github.com/markedjs/marked/security/advisories)
+- [npm lockfile format](https://docs.npmjs.com/cli/configuring-npm/package-lock-json)
+- [postMessage security](https://developer.mozilla.org/en-US/docs/Web/API/Window/postMessage#security_concerns)
+- [react-markdown security](https://github.com/remarkjs/react-markdown#security)
+- [serialize-javascript primary advisories](https://github.com/yahoo/serialize-javascript/security/advisories)
+
+[Root primary index](../../references/official-sources.md) covers Workers/Supabase/R2/Stripe and general controls. Conditional RSC/alternate-framework examples and Next-related package/advisory fixtures are review specimens only; no runtime or dependency is selected or enabled by this method.

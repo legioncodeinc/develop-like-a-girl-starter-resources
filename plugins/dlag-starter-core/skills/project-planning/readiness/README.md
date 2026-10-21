@@ -1,0 +1,7 @@
+# Builder readiness guide map
+
+Use [the complete readiness method](playbook.md) for one bounded recommendation. Read [goal intake](guides/interview-goal.md), [expectations](guides/set-expectations.md), [first representative slice](guides/choose-first-slice.md) and [actual handoffs](guides/route-readiness.md). The complete [readiness worksheet](references/templates/readiness-worksheet.md), [roles reference](references/readiness-and-roles.md), [worked cases](references/examples/cases.md) and [historical digest](references/research/distilled-builder-readiness.md) remain local.
+
+For form choice, use [the full guide](guides/choose-product-form.md), [worksheet](references/templates/product-form-worksheet.md) and [seven cases](references/examples/product-form-cases.md). For beginner security, use [the full guide](guides/explain-security-responsibilities.md), [responsibility map](references/beginner-security-responsibilities.md), [worksheet](references/templates/security-responsibility-worksheet.md) and [six cases](references/examples/beginner-security-cases.md).
+
+[Fixtures](references/examples/readiness-fixtures.json) and [envelope checker](scripts/check-envelope.py) exercise encoded advisory boundaries only. They are not model runs, learner assessment, platform qualification or app-security evidence. Local source identity and migration records are maintainer concerns; this method needs no source archive, counterpart skill or other assistant.

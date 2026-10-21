@@ -1,0 +1,27 @@
+{
+  "name": "dlag-starter",
+  "owner": {
+    "name": "Develop Like a Girl"
+  },
+  "metadata": {
+    "description": "Starter Core, Website Builder and App Builder local candidates. Install Core explicitly before either builder.",
+    "version": "0.5.9-local.1"
+  },
+  "plugins": [
+    {
+      "name": "dlag-starter-core",
+      "source": "./plugins/dlag-starter-core",
+      "description": "Starter Build Studio: shared Core plus React Router SSR, Cloudflare Workers, Supabase, R2, transactional Resend and Tailwind/shadcn design Playbooks."
+    },
+    {
+      "name": "dlag-starter-website-builder",
+      "source": "./plugins/dlag-starter-website-builder",
+      "description": "Starter Website Builder: authorized React Router SSR websites, repository-managed content, lead capture and SEO. Requires Starter Core."
+    },
+    {
+      "name": "dlag-starter-app-builder",
+      "source": "./plugins/dlag-starter-app-builder",
+      "description": "Starter App Builder: React Router apps, scoped data UI, onboarding, search, integrations and optional hosted Stripe. Requires Starter Core."
+    }
+  ]
+}

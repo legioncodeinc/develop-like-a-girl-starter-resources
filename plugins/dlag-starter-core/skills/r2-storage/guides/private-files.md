@@ -1,0 +1,15 @@
+# Authorize the file before serving it
+
+Use R2 for files and media. Separate intentionally public website assets from private user files, preferably with distinct buckets and explicit public/private configuration. Never expose a private bucket through a public domain or r2.dev URL to solve a download issue. Supabase stores metadata and ownership; Workers own upload/download handlers.
+
+Begin with an ownership record: opaque asset ID, server-generated object key, verified owner ID, expected type/size, lifecycle state and eventual checksum if required. Ignore client-provided owner IDs and object keys. Authenticate, authorize the record and operation, validate input and required bindings, then touch R2. Missing and inaccessible records should use the same outward refusal where the product calls for it. A key prefix is an organizational rule, not access proof.
+
+Default to an authenticated Worker handler using its R2 binding. The [download example](../examples/private-download.server.ts) streams only after ownership is checked, with private/no-store and a safe attachment disposition. A binding does not provide S3 presigning credentials. Direct browser upload/download links are a separate S3-compatible presigning path with narrowly scoped server-held credentials. Never invent a binding.getSignedUrl method.
+
+For presigning, validate the current actor and record before signing exactly one key and operation. Choose a short project-approved expiry and enforce its configured bounds; no lifetime is approved by this Playbook. Sign required Content-Type and configure exact browser origins, methods and headers for CORS. CORS does not authorize access. Presigned links are reusable bearer credentials until expiry, so do not log them or promise one-time use. They use the S3 endpoint, not a custom bucket domain.
+
+For uploads, check allowed media types and size before issuing authority. A browser-supplied Content-Type or filename is not file-content validation. After upload, verify object existence, size and metadata with R2 head and perform the project's actual-content/virus checks before marking it ready or serving it. A presigned PUT does not by itself enforce the business size limit. Use bounded uploads through Workers or quarantine/unpublished state plus completion validation for direct uploads. Refuse oversized, mismatched or incomplete files. A complete metadata row without a verified object stays unavailable.
+
+Keep delete/replacement/reconciliation as explicitly requested operations, with ownership checked again and failure state tracked. Do not delete existing data as cleanup from an upload task. The [storage worksheet](../templates/storage-plan.md) captures publication, expiry, size, completion and refusal choices.
+
+The packaged examples are adaptation inputs. Check local syntax and project integration only when tools permit. No Supabase SDK, React Router lifecycle, RLS execution, R2 persistence or email delivery is established by the pure helper fixture. A successful stub result must stay labeled fictional.

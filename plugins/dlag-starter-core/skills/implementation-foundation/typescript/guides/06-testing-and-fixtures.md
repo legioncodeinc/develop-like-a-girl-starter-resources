@@ -1,0 +1,17 @@
+# Tests, async fixtures, and evidence
+
+Place pure domain tests beside their domain or in the existing test layout. Components need rendered DOM/event behavior; request adapters need request/context tests; end-to-end tests need an actual built deployment-compatible app. A file size does not decide the layer. Integration tests are a separate useful layer and do not automatically become browser tests just because they use a database.
+
+Use the already selected test runner. If Vitest is installed, use its non-watch run mode for CI and the matching installed config API. Browser testing, jsdom, Testing Library, coverage providers, and Playwright require actual existing dependencies and setup; the template does not install or select them. Unit tests use injected data adapters. Mock the fetch boundary when testing that client itself, including timeout/retry/body decoding. Mocking global fetch everywhere can conceal that application code bypasses the owning client.
+
+Fixtures should match the actual generated database shape and public DTO contract. Avoid `as unknown as FullClient` and `as any` fakes: define the smallest honest interface and satisfy it. Cover no-input/no-query, one batched query, exact parameter handling, malformed response, permission failure, backend failure, and rejected partial rows. A test that calls its fake directly proves nothing about the production function.
+
+Await every async operation and rejection assertion. Restore mocks and real timers after each test. A fixture, module singleton, open handle, or shared cache must not make tests order-dependent. Use task-created temporary files only for actual filesystem adapter tests and remove only those created fixtures. Test readers independently with symlink, nonregular, oversized, private-path, and encoding cases when they exist. A pure supplied-text helper requires no filesystem fixture.
+
+For concurrency and retries, use controlled promises and fake timers to prove maximum in-flight work, eventual release after rejection, exact attempts, correct ordering, queue cap, and nonretryable failures. An assertion about a final array cannot by itself prove a concurrency bound. Count operations and inspect rejected outcomes.
+
+A component test must either pass an honest validated loader DTO or test the route adapter separately. Mounting a page component does not execute a server loader or prove auth. Runtime-only router modules require the real compatible context or a deliberate mock. Test browser focus, keyboard interaction, and layout in a real browser when a simulated DOM cannot establish the result.
+
+End-to-end testing should exercise the built Worker-compatible SSR path and direct route requests as well as hydrated navigation. A Node preview is not proof of Workers binding or compatibility behavior. Keep external vendors mocked in this repair; live staging and providers need separate authorization. Test budgets belong to the project. Avoid unsupported universal timing estimates or a rule that every commit always runs the entire browser suite.
+
+Record the exact files/revision, command, runtime, environment, fixture set, output, and limitations. Coverage percentages identify untested paths but do not establish correctness, auth, real latency, cross-browser behavior, vendor availability, or production reliability. Syntax checks do not type-check. Type checks do not run SSR. Mocked tests do not prove provider contracts.

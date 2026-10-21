@@ -1,0 +1,240 @@
+{
+  "selected_owner_count": 33,
+  "routes": [
+    {
+      "topic": "adr-writing",
+      "owner": "project-notebook",
+      "guide": "../guides/routes/adr-writing.md"
+    },
+    {
+      "topic": "auth",
+      "owner": "identity",
+      "guide": "../guides/routes/auth.md"
+    },
+    {
+      "topic": "branching-strategy",
+      "owner": "github-workflow",
+      "guide": "../guides/routes/branching-strategy.md"
+    },
+    {
+      "topic": "browser-automation",
+      "owner": "browser-checks",
+      "guide": "../guides/routes/browser-automation.md"
+    },
+    {
+      "topic": "builder-readiness",
+      "owner": "project-planning",
+      "guide": "../guides/routes/builder-readiness.md"
+    },
+    {
+      "topic": "code-foundation",
+      "owner": "quality-review",
+      "guide": "../guides/routes/code-foundation.md"
+    },
+    {
+      "topic": "code-review-pr",
+      "owner": "github-workflow",
+      "guide": "../guides/routes/code-review-pr.md"
+    },
+    {
+      "topic": "csv-xlsx-import-export",
+      "owner": "app-data-ui",
+      "guide": "../guides/routes/csv-xlsx-import-export.md"
+    },
+    {
+      "topic": "dark-mode-theming",
+      "owner": "ui-primitives",
+      "guide": "../guides/routes/dark-mode-theming.md"
+    },
+    {
+      "topic": "db",
+      "owner": "data-foundation",
+      "guide": "../guides/routes/db.md"
+    },
+    {
+      "topic": "dependency-audit",
+      "owner": "dependency-review",
+      "guide": "../guides/routes/dependency-audit.md"
+    },
+    {
+      "topic": "design-system",
+      "owner": "design-foundation",
+      "guide": "../guides/routes/design-system.md"
+    },
+    {
+      "topic": "discovery-research",
+      "owner": "project-planning",
+      "guide": "../guides/routes/discovery-research.md"
+    },
+    {
+      "topic": "estimation",
+      "owner": "project-planning",
+      "guide": "../guides/routes/estimation.md"
+    },
+    {
+      "topic": "font-loading",
+      "owner": "asset-delivery",
+      "guide": "../guides/routes/font-loading.md"
+    },
+    {
+      "topic": "git",
+      "owner": "github-workflow",
+      "guide": "../guides/routes/git.md"
+    },
+    {
+      "topic": "github-repo-health",
+      "owner": "github-workflow",
+      "guide": "../guides/routes/github-repo-health.md"
+    },
+    {
+      "topic": "http-rest-fundamentals",
+      "owner": "implementation-foundation",
+      "guide": "../guides/routes/http-rest-fundamentals.md"
+    },
+    {
+      "topic": "icon-system",
+      "owner": "ui-primitives",
+      "guide": "../guides/routes/icon-system.md"
+    },
+    {
+      "topic": "image-optimization",
+      "owner": "asset-delivery",
+      "guide": "../guides/routes/image-optimization.md"
+    },
+    {
+      "topic": "impeccable",
+      "owner": "design-foundation",
+      "guide": "../guides/routes/impeccable.md"
+    },
+    {
+      "topic": "knowledge",
+      "owner": "project-notebook",
+      "guide": "../guides/routes/knowledge.md"
+    },
+    {
+      "topic": "launch-assets",
+      "owner": "project-setup",
+      "guide": "../guides/routes/launch-assets.md"
+    },
+    {
+      "topic": "library",
+      "owner": "project-notebook",
+      "guide": "../guides/routes/library.md"
+    },
+    {
+      "topic": "lighthouse-pagespeed",
+      "owner": "browser-checks",
+      "guide": "../guides/routes/lighthouse-pagespeed.md"
+    },
+    {
+      "topic": "markdown-mdx-content-pipeline",
+      "owner": "website-builder",
+      "guide": "../guides/routes/markdown-mdx-content-pipeline.md"
+    },
+    {
+      "topic": "modal-toast-dialog",
+      "owner": "ui-primitives",
+      "guide": "../guides/routes/modal-toast-dialog.md"
+    },
+    {
+      "topic": "payments",
+      "owner": "stripe-payments",
+      "guide": "../guides/routes/payments.md"
+    },
+    {
+      "topic": "polyglot-security",
+      "owner": "security-review",
+      "guide": "../guides/routes/polyglot-security.md"
+    },
+    {
+      "topic": "product-design",
+      "owner": "project-planning",
+      "guide": "../guides/routes/product-design.md"
+    },
+    {
+      "topic": "product-planning",
+      "owner": "project-planning",
+      "guide": "../guides/routes/product-planning.md"
+    },
+    {
+      "topic": "product-strategy",
+      "owner": "project-planning",
+      "guide": "../guides/routes/product-strategy.md"
+    },
+    {
+      "topic": "product-tour-onboarding-ui",
+      "owner": "app-onboarding",
+      "guide": "../guides/routes/product-tour-onboarding-ui.md"
+    },
+    {
+      "topic": "quality",
+      "owner": "quality-review",
+      "guide": "../guides/routes/quality.md"
+    },
+    {
+      "topic": "react-security",
+      "owner": "security-review",
+      "guide": "../guides/routes/react-security.md"
+    },
+    {
+      "topic": "react",
+      "owner": "react-foundation",
+      "guide": "../guides/routes/react.md"
+    },
+    {
+      "topic": "readme-writing",
+      "owner": "github-workflow",
+      "guide": "../guides/routes/readme-writing.md"
+    },
+    {
+      "topic": "security",
+      "owner": "security-review",
+      "guide": "../guides/routes/security.md"
+    },
+    {
+      "topic": "tailwind",
+      "owner": "design-foundation",
+      "guide": "../guides/routes/tailwind.md"
+    },
+    {
+      "topic": "tanstack",
+      "owner": "app-data-ui",
+      "guide": "../guides/routes/tanstack.md"
+    },
+    {
+      "topic": "technical-explainer",
+      "owner": "technical-explainer",
+      "guide": "../guides/routes/technical-explainer.md"
+    },
+    {
+      "topic": "technical-writing-craft",
+      "owner": "project-notebook",
+      "guide": "../guides/routes/technical-writing-craft.md"
+    },
+    {
+      "topic": "terminal-bash",
+      "owner": "implementation-foundation",
+      "guide": "../guides/routes/terminal-bash.md"
+    },
+    {
+      "topic": "typescript-node",
+      "owner": "implementation-foundation",
+      "guide": "../guides/routes/typescript-node.md"
+    },
+    {
+      "topic": "typography-font",
+      "owner": "design-foundation",
+      "guide": "../guides/routes/typography-font.md"
+    },
+    {
+      "topic": "ux-ui",
+      "owner": "design-foundation",
+      "guide": "../guides/routes/ux-ui.md"
+    },
+    {
+      "topic": "website",
+      "owner": "website-builder",
+      "guide": "../guides/routes/website.md"
+    }
+  ]
+}

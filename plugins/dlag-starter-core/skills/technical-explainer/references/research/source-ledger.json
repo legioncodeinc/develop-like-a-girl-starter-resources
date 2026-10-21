@@ -1,0 +1,27 @@
+[
+  {
+    "id": "assertion_error.py",
+    "path": "references/examples/error-code-fixtures/assertion_error.py",
+    "archive_sha256": "7b5ea5ee2e560e5b3a1b27e5898856538cfd7a9b21cbdb0ae2dba0f1ed2ac9ae"
+  },
+  {
+    "id": "name_error.cjs",
+    "path": "references/examples/error-code-fixtures/name_error.cjs",
+    "archive_sha256": "322413a9325771cf3422596ae7d9d7f72d11752a851a1ec9e5b5dec90f218dae"
+  },
+  {
+    "id": "policy.cjs",
+    "path": "references/examples/error-code-fixtures/policy.cjs",
+    "archive_sha256": "65ca040db0536bcfc36f6d559383be7c22226e04a0034671c0a08e7d2d7d5b13"
+  },
+  {
+    "id": "policy_exercise.cjs",
+    "path": "references/examples/error-code-fixtures/policy_exercise.cjs",
+    "archive_sha256": "1e535c0ba7894c7ac553742f45736524716e36db90084bac196f10bc4c41b950"
+  },
+  {
+    "id": "quantity_error.py",
+    "path": "references/examples/error-code-fixtures/quantity_error.py",
+    "archive_sha256": "1f6dc74903f6b34ae9af64a1c7fdccb452df200d20070c8320a7da2dc284e1cd"
+  }
+]

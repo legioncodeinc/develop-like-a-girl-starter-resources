@@ -1,0 +1,27 @@
+/* Illustrative values only. Adapt to the approved product brief.
+   Merge into the existing stylesheet; this is not an installation command. */
+@import "tailwindcss";
+:root {
+  --background: oklch(0.99 0 0);
+  --foreground: oklch(0.20 0 0);
+  --primary: oklch(0.30 0 0);
+  --primary-foreground: oklch(0.99 0 0);
+  --ring: oklch(0.45 0 0);
+  --radius: 0.5rem;
+  --motion-fast: 140ms;
+  --motion-ease: ease-out;
+}
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-ring: var(--ring);
+  --radius-md: var(--radius);
+}
+@theme {
+  --font-sans: ui-sans-serif, system-ui, sans-serif;
+}
+@media (prefers-reduced-motion: reduce) {
+  :root { --motion-fast: 0ms; }
+}

@@ -1,0 +1,9 @@
+{
+  "name": "dlag-starter-app-builder",
+  "version": "0.5.3-local.1",
+  "description": "Starter App Builder: React Router apps, scoped data UI, onboarding, search, integrations and optional hosted Stripe. Requires Starter Core.",
+  "author": {
+    "name": "Develop Like a Girl"
+  },
+  "license": "AGPL-3.0-or-later"
+}

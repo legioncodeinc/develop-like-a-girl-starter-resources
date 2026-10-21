@@ -1,0 +1,42 @@
+{
+  "example_kind": "constructed interpretation data; never executed",
+  "candidate": "illustrative-candidate-only",
+  "host": "Claude Code",
+  "host_version": "UNKNOWN",
+  "native_execution": "UNEXECUTED",
+  "cases": [
+    {
+      "name": "unsupported payload with empty response",
+      "hypothetical_supplied_response": {},
+      "hypothetical_supplied_validator_calls": 0,
+      "allowed_interpretation": "Unrecognized input; no successful validation claim",
+      "actual_fixture_run_by_this_document": false
+    },
+    {
+      "name": "recognized offline payload",
+      "hypothetical_supplied_validator_calls": 1,
+      "hypothetical_supplied_result": "bounded offline result from an actual separate receipt would qualify only that input and handler",
+      "allowed_interpretation": "Native registration, event delivery, host deadline and independent review remain unproved",
+      "actual_fixture_run_by_this_document": false
+    },
+    {
+      "name": "source inventory with no selected runtime receipt",
+      "hypothetical_source_entries": ["illustrative existing method"],
+      "selected_prerequisites": "UNKNOWN",
+      "native_discovery": "UNKNOWN",
+      "allowed_interpretation": "Source existence only; inspect actual task closure before dependent use"
+    },
+    {
+      "name": "output resembles a native advisory",
+      "hypothetical_safe_advisory": "A required check is unavailable; component remains unverified",
+      "allowed_interpretation": "Response shape alone does not attest host identity or successful native delivery"
+    },
+    {
+      "name": "candidate changed after review",
+      "hypothetical_review_candidate": "illustrative-A",
+      "hypothetical_final_candidate": "illustrative-B",
+      "allowed_interpretation": "Retain old review identity and renew affected checks and ordered gates"
+    }
+  ],
+  "effects": "None; this file is documentation data, not a validator or runtime receipt"
+}

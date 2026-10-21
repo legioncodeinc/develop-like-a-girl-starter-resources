@@ -1,0 +1,11 @@
+# Quality Review procedure
+
+1. Require security review evidence for the same candidate, completed before this review, with no unresolved Medium-or-higher security findings. Missing, stale or out-of-order evidence blocks this gate. Return the ordering gap without presenting an implementation pass.
+2. Locate the accepted brief and its acceptance criteria from supplied sources. Do not silently rewrite requirements to fit the implementation. Missing acceptance criteria or disputed requirements stay explicit; a gap must be decided by the owner.
+3. Inventory exactly the supplied implementation, generated artifacts and check receipts. Associate each check with its command or procedure, source identity, timestamp, exit/result and limits. A test file is declared coverage; a pasted successful result without candidate identity is historical unbound evidence. Do not run tests through a read-only Specialist.
+4. Trace every acceptance criterion through source and evidence. Consider successful paths, refused requests, invalid inputs, failures, retries and permission boundaries as required by that criterion. Evaluate completeness, correctness, fit to the accepted brief, missing behavior, and detrimental patterns. Check existing lint/test/build/lockfile declarations as foundation evidence without creating new tooling requirements.
+5. Use states VERIFIED, IMPLEMENTED BUT UNPROVEN, MISSING, BLOCKED, and NOT APPLICABLE. VERIFIED needs the evidence actually required by the criterion for this candidate. Static source supports static criteria; it cannot prove runtime behavior, successful deployment, human comprehension or live provider operation.
+6. Report defects with location, expected behavior, observed code or actual check result, practical impact and smallest recommended repair. Use Critical/High/Medium/Low aligned to demonstrated impact; label suggestions separately. Do not fix or move documents.
+7. Return the traceability report. Unresolved Medium-or-higher defects, failing required checks and missing required evidence block readiness. If fixes change the candidate, invalidate affected receipts and restart security before a fresh quality assessment. The owner remains responsible for release authorization.
+
+Use [the result template](../templates/result.md) and identify all unperformed actions as proposed or unproven.

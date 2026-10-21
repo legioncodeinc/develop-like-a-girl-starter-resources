@@ -1,0 +1,28 @@
+{
+  "specimen_status": "NOT_RUN; template for a target build-journey ledger",
+  "subject_revision": "UNKNOWN until actual target supplied",
+  "claims": [
+    {
+      "claim_id": "B1",
+      "source": "[actual local build entrypoint]",
+      "source_sha256": "[actual bytes]",
+      "supporting_passages": [
+        {
+          "line": "[actual line]",
+          "quote": "[exact inspected statement]"
+        }
+      ],
+      "reader_claim": "[entrypoint, actual argument/validation/output behavior]",
+      "kind": "[source observation or explicit gap]",
+      "execution": "NOT_RUN",
+      "understanding": "Pending"
+    }
+  ],
+  "required_checks": [
+    "output safety precedes mutations",
+    "actual dependency selection and error branches",
+    "generated files separate from host discovery",
+    "no source or runtime claim without supplied files"
+  ],
+  "source_locator_root": "actual target repository, unresolved"
+}

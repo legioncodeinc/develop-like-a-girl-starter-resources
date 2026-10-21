@@ -1,0 +1,11 @@
+# Prepare an integration or plugin
+
+1. Lock host platform, customer-facing versus internal use, distribution method, required events/actions and acting identity. No provider account is needed merely because it appears in a broad asset list.
+2. Identify the owner of the selected platform/API/extension work; use an actually packaged method only when available. An unavailable method is a handoff gap, not permission to invent setup. Record provider application/project reference, exact requested scopes/permissions, accountable owner and environment. Do not let an integration borrow a user's authority implicitly.
+3. Separate authorization callback, installation setup URL and inbound webhook endpoint. Capture app brand/privacy/support contact and domain ownership as applicable. Google production policies and GitHub callback rules are provider-specific; do not impose them universally.
+4. Record secret custodian/reference, event delivery/retry/recovery owner and approved test fixtures. Never request secret values. Identify verification/review/rate-plan unknowns with the current official source needed to resolve them.
+5. Prepare ledger rows and concrete handoffs. Hosted callbacks/webhooks need their selected hosting/HTTPS preparation; purely local plugins do not automatically need a server, database, OAuth or store account. No registration, permission settings, installations or external test events are performed here.
+
+Use Cloudflare Workers for hosted application callbacks/webhooks and Cloudflare secrets for their server secrets. Supabase supplies customer identity and database records; R2 supplies file storage. Signing in, possessing a record ID or knowing an R2 URL does not authorize access to another customer's record or file. Verify inbound webhook signatures before changing account/entitlement state. Stripe is optional hosted Checkout, not custom payment UI.
+
+Only supplied local evidence is inspected by this role. Current official API permission, callback, verification, retry and rate requirements need dated evidence; otherwise they stay unknown. [Qualification](qualify-assets.md) and the [ledger contract](../../references/readiness/ledger-contract.md) preserve the requirement-versus-observation distinction. No API call, registration, install, external test event or provider configuration occurs.

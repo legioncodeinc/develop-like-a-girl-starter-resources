@@ -1,0 +1,16 @@
+# 09. Secrets, history evidence and triage
+
+Use the full [pattern and triage catalog](../references/cross-cutting/secrets-patterns.md), [tool boundaries](../references/cross-cutting/tool-commands.md) and [scope contract](../references/review-contract.md). Security Review reads supplied sanitized evidence only and returns findings in chat.
+
+1. Identify exactly which source snapshot and sanitized history evidence were supplied. A committed-only copy excludes uncommitted work; a current checkout does not prove history coverage. Never create a clone/archive, inspect `.git`, credential stores, real `.env*`, `.dev.vars*`, keys or private human documents from this role.
+2. Evaluate supplied scanner receipts in the existing-tool ladder: tool/version, redaction before output, explicit scope, provider verification disabled, byte limits and actual exit code. No missing rung authorizes installation, source builds or network. A capable caller may use the bundled bounded source/patch helper separately.
+3. Never test a candidate against its provider. Token shape, test prefix and verified active credential are different evidence states. Record unsupported validity; do not classify “live-format” as confirmed active.
+4. Scope every redacted hit to assigned code/config. Drop duplicate/out-of-scope candidates with counts and reasons; never expose full matches in notes. Human/credential-file exclusions remain a cap.
+5. Read the supplied safe locator and surrounding source. Classify provider-shaped, test mode, placeholder, generic assignment or noise using the complete catalog. A hash, variable name or inert fixture is not automatically a leaked credential.
+6. For history evidence, determine whether a candidate remains in the supplied current source, was removed, or cannot be compared. Presence in one sanitized patch does not establish entire history completeness or current activity. Record missing commits, rename/binary/path exclusions and collection method.
+7. Sensitive-file names alone show only a possible exposure surface. Committed/deployed status requires actual sanitized tracked/artifact evidence. Do not open private credential files to confirm the risk; request a sanitized owner assessment or state unavailable.
+8. Trace secrets from Cloudflare server bindings to application code and through logs, errors, Vite client variables, SSR/loader data, email links and artifacts. Conditional container/config literals use the CI/infra catalog. Masking at one output does not prove all derivative values are redacted.
+9. Report one distinct credential concern with all evidenced redacted locations, rule, actor/precondition and explicit validity limits. Recommend owner-authorized rotation/revocation first for an actual leak, then removal and server-secret storage, then separately authorized history cleanup if needed. No rotation, key lookup, history rewrite or provider operation occurs here.
+10. Record source candidates, supplied history-only candidates and evidenced committed-file count separately. Each metric cites actual supplied tool/version/manual method and limitations; do not invent zeros for excluded files or absent history.
+
+Done when every supplied candidate is classified, evidence contains no full secret, all uncovered sources/history/private paths are stated, and recommendations preserve owner authority.

@@ -1,0 +1,48 @@
+# Inert proposal for an EXISTING authorized Node release pipeline.
+# Do not install as CI without reviewing tools, immutable action SHAs, scripts,
+# artifact paths, schema/coverage gate, identity and external-write permissions.
+# This preserves the five stages. All missing target operations fail closed.
+# No npm installation, scanner download, signing or upload was performed here.
+name: Proposed release inventory
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  inventory:
+    # Deliberately disabled until the owner authorizes the specific pipeline.
+    if: ${{ false }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout exact candidate
+        uses: actions/checkout@REVIEWED_IMMUTABLE_COMMIT_REQUIRED
+      - name: Build final artifact with existing approved toolchain
+        run: |
+          # Supply reviewed existing frozen-install/build commands and runtime.
+          # npm ci may remove node_modules and execute scripts; do not add it blindly.
+          echo 'NOT_CONFIGURED: target build and artifact identity required'
+          exit 78
+      - name: Generate SBOM with an existing approved generator
+        run: |
+          # Record generator/version/flags/input digest and output separately.
+          # No curl, npx or package installation fallback is authorized.
+          echo 'NOT_CONFIGURED: generator and input scope required'
+          exit 78
+      - name: Qualify exact schema coverage and final-artifact subject
+        run: |
+          # Existing validator plus manifest/lock/build/artifact reconciliation.
+          # A parsed JSON document or nonzero count cannot pass this gate alone.
+          echo 'NOT_CONFIGURED: schema and coverage qualification required'
+          exit 78
+      - name: Attest final artifact with the SBOM predicate
+        # Select the current supported official action and immutable revision.
+        # An authorized attesting job needs documented least-privilege OIDC/API
+        # permissions; this disabled specimen grants neither.
+        run: |
+          echo 'NOT_CONFIGURED: signer identity and predicate policy required'
+          exit 78
+      - name: Retain artifact SBOM statement and verifier result
+        # Choose approved storage/retention; an upload is an external write.
+        run: |
+          echo 'NOT_CONFIGURED: retention destination and independent verifier required'
+          exit 78

@@ -1,0 +1,9 @@
+{
+  "name": "dlag-starter-website-builder",
+  "version": "0.5.2-local.1",
+  "description": "Starter Website Builder: authorized React Router SSR websites, repository-managed content, lead capture and SEO. Requires Starter Core.",
+  "author": {
+    "name": "Develop Like a Girl"
+  },
+  "license": "AGPL-3.0-or-later"
+}

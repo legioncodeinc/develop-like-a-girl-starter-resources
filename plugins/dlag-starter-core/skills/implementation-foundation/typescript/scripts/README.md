@@ -1,0 +1,24 @@
+# Heuristic helpers
+
+These helpers are optional Node caller tools. The implementation role has no shell permission. Read [input and output rules](../guides/09-optional-capabilities-and-cli.md) before asking a capable authorized caller to use one. Never execute project imports, configurations, installed dependencies, or lifecycle scripts just to run these checks.
+
+| File | Implemented lead |
+|---|---|
+| audit-untyped-boundaries.mjs | any annotations/casts and JSON.parse without same-line schema parse |
+| audit-unbatched-queries.mjs | loop depth heuristic plus query/select/rpc and direct data fetch leads |
+| audit-hardcoded-secrets.mjs | three literal families, opaque secret-shaped literals, authorization literals, secret logging |
+| audit-swallowed-catch.mjs | empty catch and unused catch binding without nearby comment |
+| audit-schema-drift.mjs | runtime ALTER TABLE and ADD COLUMN review leads |
+| check-esm.mjs | CJS constructs, location globals, Node import extensions, builtin naming, polyfill and Worker import leads |
+
+No arguments means bounded JSON stdin: `{"context":"bundler","sources":[{"text":"const parsed = JSON.parse(raw);"}]}`. Context must be bundler, node, or worker. In stdin mode source names are ignored and indexes follow the supplied array. In root mode accepted relative names are sorted by JavaScript string comparison before assigning zero-based numeric indexes. A capable caller can retain that same safe local sorted mapping without sending paths or source text to output. Results identify numeric source indexes and lines, stable rule IDs, and review classification. Exit 0 means no implemented lead, 1 means leads, 2 means refused/incomplete input. No raw source, paths, literal values, or caught errors are printed.
+
+`node <selected-helper> --root <explicit-source-directory>` defaults to bundler context; add `--context node` or `--context worker` when that selected source tree has the corresponding runtime. It uses the locally packaged `react-foundation/scripts/safe-input.mjs` sibling. This dependency must ship in the same Core pack. It is not a source archive link. The caller supplies an owned, canonical source directory and stable owned ancestors, excluding concurrent hostile renames. The Node reader explicitly disclaims atomic ancestor pinning, rejects symlinks/nonregular/hard-linked/private inputs, and does not load tsconfig or project imports. It skips dot paths and credential/human-note paths. Technical private source remains reviewable. Do not select a real private or credential directory.
+
+The sibling traversal caps depth 12, visited entries 4096, files 256, each file 1 MiB, total 32 MiB. This scanner adds stricter acceptance bounds: 64 files, each 256 KiB, aggregate 8 MiB, 512 findings per file, 2048 total. A catch-binding name over 128 characters refuses before constructing a dynamic pattern. Oversized collections refuse rather than sample and claim success. The collection and stdin wait deadline is 5 seconds; on refusal the Node CLI emits a fixed diagnostic and exits 2, terminating the outstanding collection process. The sibling reader itself has no cancellation API. No background task is retained after CLI exit. There is no waiting for an open stdin forever. Stdin max 12 MiB includes JSON encoding, and structural nesting is capped at 32. Pure regex work operates only after these bounds. Do not interpret skipped files as scanned. The sibling returns decoded UTF-8 strings; root mode refuses any replacement character, including a literal U+FFFD, rather than silently scan a lossy decode.
+
+The adapter cannot atomically pin Node ancestor directories. Use only a stable owned tree; hostile concurrent directory mutation remains an explicit limitation. The authoring receipt records supplied strings, stdin, and task-created synthetic source-tree exercises. No real project scan ran. Independent review remains required before integration acceptance.
+
+Runtime DDL should be reviewed against migrations, not a backend-specific magic filename. Duplicate generated schema shapes need a reviewer comparison with the actual generated source. The helper cannot discover the authoritative schema. Node engines are reviewed from a separately supplied manifest and actual build configuration; no cwd package.json is read and no raw engine text is printed.
+
+Empty-catch delimiter segments, credential-log call segments and authorization-prefix matching use linear walks instead of repeatedly rescanning an unfinished long line. These are regex triage checks, not TypeScript parsing, auth analysis, an exhaustive secret scanner, a whole-repository claim, or a release gate by themselves. The JSON parse check intentionally fixes an original matcher that cleared its flag on JSON.parse itself. Comments, multiline constructs, and aliases still need source inspection.

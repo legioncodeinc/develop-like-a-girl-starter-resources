@@ -1,0 +1,62 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "config:recommended"
+  ],
+  "minimumReleaseAge": "7 days",
+  "schedule": [
+    "before 5am on monday"
+  ],
+  "automerge": false,
+  "lockFileMaintenance": {
+    "enabled": true,
+    "schedule": [
+      "before 5am on monday"
+    ]
+  },
+  "packageRules": [
+    {
+      "description": "Group patch updates for review; grouping is not approval to merge.",
+      "matchUpdateTypes": [
+        "patch"
+      ],
+      "groupName": "patch updates",
+      "groupSlug": "patch-updates",
+      "automerge": false
+    },
+    {
+      "description": "Illustrative native family only when these packages actually exist; review pins, scripts and targets manually.",
+      "matchPackageNames": [
+        "/^tree-sitter(?:-|$)/",
+        "@huggingface/transformers"
+      ],
+      "automerge": false,
+      "minimumReleaseAge": "14 days",
+      "groupName": "native packages requiring review",
+      "labels": [
+        "dependencies",
+        "native-dep",
+        "review-required"
+      ]
+    },
+    {
+      "description": "Never automatically merge a major update.",
+      "matchUpdateTypes": [
+        "major"
+      ],
+      "automerge": false
+    }
+  ],
+  "prConcurrentLimit": 5,
+  "labels": [
+    "dependencies",
+    "renovate"
+  ],
+  "vulnerabilityAlerts": {
+    "enabled": true,
+    "labels": [
+      "security",
+      "dependencies"
+    ]
+  }
+}

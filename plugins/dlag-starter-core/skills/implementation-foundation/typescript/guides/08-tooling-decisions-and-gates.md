@@ -1,0 +1,15 @@
+# Existing tooling and gates
+
+Read the manifest and lockfile before proposing a command. Keep the existing package manager and frozen/immutable lockfile discipline. A manager migration changes resolution, scripts, lifecycle behavior, optional native handling, workspace links, CI caches, and reproducibility. It needs its own measured decision and reviewed migration, not an incidental TypeScript fix. Do not install tools in order to create the evidence for that decision without authorization.
+
+Dependencies imported by a package must be declared by that package. Hoisting behavior is not a dependency declaration. Inspect workspace globs against real package paths and package-to-package edges. A local workspace reference, published rewrite, generated output, and runtime resolution are distinct contracts. Starter does not select a monorepo orchestrator, CMS package, distributed cache service, or new manager by default.
+
+Consider task orchestration only after identifying actual repeated work, package count, dependency ordering, cache inputs, output paths, secrets, environment effects, and maintenance ownership. A task cache can return stale or attacker-controlled artifacts if the key or trust boundary is wrong. Vendor benchmark numbers and advocacy pages are not neutral proof. Reproduce a relevant comparison before changing tooling.
+
+Preserve existing lint and formatting rules that catch real React hooks, accessibility, type-aware, testing, and security bugs. Do not transplant a Svelte-based argument that hooks rules are irrelevant into React. A faster tool is useful only if required coverage survives. Compare rule-by-rule, then measure actual runtime and maintenance cost. If a narrow hybrid remains, scope it to the uncovered rules and avoid duplicate whole-tree passes.
+
+CI gates report failures without rewriting source. Where Biome is already selected, its documented nonwriting CI mode is the model; local write/fix commands are separate user actions. Preserve the existing ESLint/formatter command if selected. A pre-commit hook can help but does not replace complete CI. Staged filenames passed directly to tsc can select a different program from the project's intended config. Resolve the actual command and project references.
+
+Duplication checks, if already installed, use the project's thresholds and exclusions. An inherited percentage is not universal law. Extract genuinely shared policy and behavior rather than hide failures with ignore comments, but do not merge superficially similar code with different authorization or runtime contracts. Record must-fix correctness, refactor value, and style separately.
+
+Node version policy applies to the build toolchain, not Worker execution. Record the actual supported build major and reproducible tool version, keep CI and local expectations aligned, and verify current support before pinning. No Vercel dashboard semantics or deprecation dates apply to Starter. No Node-version pin proves compatibility date, flags, or bindings for Workers.

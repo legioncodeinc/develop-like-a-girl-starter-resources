@@ -1,0 +1,19 @@
+# Plan one useful outcome in small slices
+
+Read existing context first. Keep the selected kit and accepted stack unless the owner explicitly changes them. If the idea is too broad, ask who needs to do what first and what successful completion looks like. Use one concrete user job, such as a member viewing their own booking. A request to plan is not permission to build, provision accounts or contact customers.
+
+Separate the problem from a proposed solution. Record supplied customer evidence, the current workaround and any meaningful differentiation. If evidence is missing, mark the customer assumption untested. Draft one small experiment with an observable result and a success/stop threshold before anyone runs it. Contacts, recruitment, surveys and live tests need their own authorization. Do not call a fictional example demand validation.
+
+Choose the smallest complete first version within the owner's supplied time/cash appetite. Appetite is a limit, not an estimate. Preserve accepted requirements. Sort proposed features into essential, manual for now, deferred with a trigger or excluded with a reason. Do not add payments, login, media, CMS, AI or other providers unless the user's job needs them. Flag pricing as a hypothesis if it has no supplied evidence.
+
+Describe one journey in ordinary language: actor, entry point, input, server check, result and refusal/error. Record the relevant screen states: initial or empty, loading, success, invalid input, permission denied and request failed. State which are not applicable and why. A screen description is a plan, not a working prototype or an accessibility audit.
+
+Split into tasks named by observable behavior. Each task needs exact bounded source paths if the project exists, acceptance criteria and a meaningful check. When source is absent, state proposed paths and mark them provisional. Avoid tasks called frontend/backend/misc without a complete outcome. Keep a first slice small enough that its result and its failure path can be checked together.
+
+List only genuine dependencies: what one task needs another to deliver. Find shared API, data, permission and state boundaries. Record producer, consumers, current agreement/revision and unresolved terms. Do not invent accepted terms. A task depending on an unresolved permission or record shape remains blocked; independent tasks may stay planned. Do not claim Interface Contracts or a builder is installed without checking availability.
+
+Order dependencies before dependents. Work with no real dependency may be parallel only when file ownership and interfaces are explicit and the owner has authorized delegation. Recommend one next task; do not dispatch workers from this planning workflow.
+
+If asked for time or cost, show supplied assumptions separately from observations. With no comparable completed work, give no confidence percentage, universal AI speed factor or promised completion date. Suggest measuring the first representative slice including learning, review and rework, then revising the remaining forecast. Keep owner time, provider cash and recurring operations separate; unknown rates stay unknown.
+
+Deliver the plan with scope, evidence, slice order, definition of done, risks and unresolved decisions. Mark status Draft unless actual acceptance evidence exists. A useful draft can be complete as a draft while its implementation and research remain unperformed. Name those limits clearly. When the user requests saving the plan and Write/Edit tools are available, create only the requested Markdown document in the named workspace, checking the destination first. Existing differing files stay untouched unless that edit was expressly requested. Read saved content back and check its links and decision states. Without write tools, return the complete unsaved draft and state that limit.

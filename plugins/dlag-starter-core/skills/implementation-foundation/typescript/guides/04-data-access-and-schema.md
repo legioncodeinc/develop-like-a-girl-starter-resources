@@ -1,0 +1,15 @@
+# Data access, query types, and schema changes
+
+Use the existing Supabase data adapter with its generated database types. Derive row, insert, and update shapes from that generated type source instead of maintaining a second handwritten table interface. Keep projected DTOs separate: a public result may intentionally contain fewer fields than the row, but that projection needs a clear contract and tests. A generated optional field still needs runtime null handling.
+
+Typed selections must match returned fields, relationships, cardinality, aliases, and nullability. Nested/self-referential queries must use the actual query scope; a table object from a different alias can produce wrong SQL even if both expressions type-check. Do not copy an unselected ORM's callback signatures, aggregation limits, schema declarations, or deprecated type names into a Supabase client. Verify the chosen client's installed signatures. Inspect actual query shape and result decoding rather than casting an incompatible nested selection into the expected type.
+
+Values belong in the client's parameter/filter API or a database function with typed parameters. Dynamic identifiers require an application allowlist; escaping arbitrary identifiers is not authorization. Literal SQL string escaping from a backend with no parameter support must not replace Postgres parameter binding. For pattern matching, decide whether user `%` and `_` characters are wildcards or literal text and encode that contract explicitly. Quote-escape tests do not prove tenant isolation. Never expose a privileged server credential to bypass RLS for convenience.
+
+Batch related reads through one bounded query where possible. Empty input returns empty output without a query. Deduplicate bounded IDs, limit output, and report truncation. Independent heterogeneous reads can use bounded concurrency; unbounded Promise.all over user input is not a bound. Query count and returned shape deserve tests in addition to snapshots of rendered markup.
+
+Database schema lives in reviewed migrations owned by the database process. Request handlers do not lazily ALTER tables or heal missing columns. Preserve the schema-diff discipline as a review: inspect current definition, intended change, dependent generated types, backfill, default/nullability, policies, indexes, and rollback/roll-forward plan. A default for an existing column is a data decision, not universally safe. Additive, backfill, and constraint phases may be necessary. Re-verify an already-applied state before treating a race as success.
+
+A missing relation or column is an operational/schema failure unless the product contract defines a safe empty state. Do not convert a permissions error or missing migration into 'no results'. Compare fixtures to generated schema and regenerate types after an authorized migration. No migration apply, remote introspection, or credential use is authorized by this guide.
+
+Source: [Supabase type generation](https://supabase.com/docs/guides/api/rest/generating-types). Generated shape and query compilation do not prove RLS, authorization, or live migration state.

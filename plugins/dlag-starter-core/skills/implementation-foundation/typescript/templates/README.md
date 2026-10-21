@@ -1,0 +1,3 @@
+# Template preconditions
+
+These are adaptation worksheets and a compiler/schema illustration, not an application scaffold. `tsconfig.browser.json` assumes existing React JSX dependencies and must preserve the actual framework rootDirs, generated include files, project references and aliases. It does not provide Worker bindings or Node tool types. `boundary-schema.ts` is dependency-free and performs runtime validation and projection, but it does not authorize rows. Test, migration, entry/artifact and gate worksheets require actual project values and evidence before acceptance. No lifecycle commands or automatic hooks are installed.

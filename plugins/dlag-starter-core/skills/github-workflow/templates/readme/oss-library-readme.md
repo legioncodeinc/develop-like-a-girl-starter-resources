@@ -1,0 +1,99 @@
+<!-- Project template context: Relative links target files in the receiving repository after this template is filled. They are not required files beside this source template. -->
+
+> Draft/review only: read the supplied README and safe project evidence, then return a draft or findings in chat. Do not write files, run install/quickstart commands, check badges over the network, read credentials, configure CI or publish through this role. Mark unavailable runtime/network proof unexecuted. Project examples and placeholders are illustrative and must be resolved from actual receiving-project evidence before a runnable/current claim.
+# {project-name}
+
+> {One sentence: what problem it solves, for whom, without jargon.}
+
+[![CI](https://img.shields.io/github/actions/workflow/status/{owner}/{repo}/ci.yml)](https://github.com/{owner}/{repo}/actions)
+[![npm version](https://img.shields.io/npm/v/{package-name})](https://www.npmjs.com/package/{package-name})
+[![Coverage](https://img.shields.io/codecov/c/github/{owner}/{repo})](https://codecov.io/gh/{owner}/{repo})
+[![License](https://img.shields.io/github/license/{owner}/{repo})](https://github.com/{owner}/{repo}/blob/{default_branch}/LICENSE)
+
+<!-- Optional: hero image or demo GIF. Shows the tool in action. Remove if not applicable. -->
+<!-- ![Demo](https://example.invalid/replace-with-approved-demo) -->
+
+## Quickstart
+
+```bash
+{install command, e.g. npm install package-name}
+```
+
+```{language}
+{minimal working example with expected output in a comment}
+// expected output: ...
+```
+
+## Features
+
+- {Feature 1: specific, verifiable, user-facing}
+- {Feature 2}
+- {Feature 3}
+- {Feature 4}
+- {Feature 5}
+
+<!-- Keep only supported features. Each should explain a user capability. There is no minimum count. -->
+
+## Install
+
+**Prerequisites:** {Node.js version | Python version | OS requirement, etc.}
+
+```bash
+{full install instructions, including alternative package managers if applicable}
+```
+
+## Usage
+
+### {Most common use case}
+
+```{language}
+{Runnable code example. Import + call + output.}
+```
+
+### {Second most common use case}
+
+```{language}
+{Runnable code example.}
+```
+
+<!-- Add more usage sections as needed. Each needs a code block. -->
+
+## Configuration
+
+<!-- Delete this section if the project has no configuration options. -->
+
+| Option | Type | Default | Description |
+|---|---|---|---|
+| `{optionName}` | `{type}` | `{default}` | {What it does} |
+
+## API
+
+<!-- Delete or replace with a link to generated docs if the API surface is large. -->
+
+### `{functionName}(args)`
+
+{One-line description.}
+
+**Parameters:**
+- `{param}`, `{type}`, {description}
+
+**Returns:** `{type}`, {description}
+
+**Example:**
+```{language}
+{example}
+```
+
+## Documentation
+
+{Link to the existing user guide, examples, API reference, and approved public product explanations. State who should read each one. Do not link private architecture, planning, evidence, or business material from a public README. Remove when no additional documentation exists.}
+
+{For document-generating libraries, show the actual source inputs, invocation, output formats, output location, citations, and review requirements. Do not imply that a README can replace source material. Keep private evidence separate from public outputs. Remove when not applicable.}
+
+## Contributing
+
+See [CONTRIBUTING.md](https://github.com/{owner}/{repo}/blob/{default_branch}/CONTRIBUTING.md). Run `{test command}` before opening a PR.
+
+## License
+
+Licensed under the [{license-name}](https://github.com/{owner}/{repo}/blob/{default_branch}/LICENSE) License.

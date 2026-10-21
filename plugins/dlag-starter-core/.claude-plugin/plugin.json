@@ -1,0 +1,9 @@
+{
+  "name": "dlag-starter-core",
+  "version": "0.5.9-local.1",
+  "description": "Starter Build Studio: shared Core plus React Router SSR, Cloudflare Workers, Supabase, R2, transactional Resend and Tailwind/shadcn design Playbooks.",
+  "author": {
+    "name": "Develop Like a Girl"
+  },
+  "license": "AGPL-3.0-or-later"
+}

@@ -1,0 +1,106 @@
+# Guide 03 - Feature PRD Authoring
+
+> Capability boundary: Read the Project Notebook entrypoint and `../references/library-boundaries.md` first. The procedure describes document semantics. Use available Read/Grep/Glob/Skill and authorized Markdown Write/Edit only; moves, shell commands, provider effects and unavailable services remain proposals.
+
+Covers creating and managing PRDs (Product Requirement Documents) for planned product and feature work.
+
+## Trigger phrases
+
+- "write a PRD for X"
+- "plan feature X"
+- "spec out X"
+
+## Template
+
+When deriving reusable formats from existing work, also read [Guide 08](08-reuse-workflow-templates.md). The existing template carries source identity, evidence status and adaptation fields; copy no execution or approval claim without its actual evidence.
+
+Start from the blank fill-in template at `templates/prd-template.md`. Copy it to the correct v2 path and replace every placeholder.
+
+See `examples/prd-007-example.md` for a fully worked example.
+
+## Shared contract check before parallel PRDs
+
+When the user authorizes independent PRD authors, first, inventory interfaces their work will share: API operations, events, data shapes, permissions, state transitions, and other observable handoffs. Read accepted `CTR` records under `library/knowledge/private/contracts/` and compare them with existing code, schemas, and ADRs. If an agreement is missing, Draft, or contradicted, route that boundary to the actual designated contract owner. Authors may draft independent sections, but affected PRDs cannot be finalized until the owner accepts the exact contract revision. See [shared boundary requirements](../references/library-boundaries.md). Record a missing agreement and ask its actual designated owner; no additional contract-authoring method is installed.
+
+Give each PRD author the same accepted contract revision, a separate file scope, and a list of shared terms that must appear in their acceptance criteria. Add `## Contract dependencies` to the index and each affected sub-PRD. Pin `CTR-<###> revision <n>` with a relative link. Use `- None; no shared boundary identified.` when the inventory finds none. Include the provider and consumer checks in acceptance criteria. When a PRD folder moves, repair its relative links and manually check the link and pinned revision. Automated contract validation is unavailable; report the manual checks actually completed.
+
+## Output path
+
+```
+library/requirements/backlog/prd-<###>-<kebab-slug>/
+  prd-<###>-<kebab-slug>-index.md                module overview + feature list
+  prd-<###><letter>-<kebab-slug>-<feature>.md    sub-feature PRD (optional, multiple allowed)
+  qa/
+    prd-<###>-<kebab-slug>-qa.md                 QA report (authored by quality-review)
+```
+
+## Naming rules
+
+- Folder: `prd-<###>-<kebab-slug>/`
+- `<###>` is repo-local sequential (3-digit zero-padded). **Before assigning**, list all `prd-*` folders across `backlog/`, `in-work/`, and `completed/`; take `max + 1`.
+- Index file: `prd-<###>-<kebab-slug>-index.md`
+- Sub-PRDs: `prd-<###><letter>-<kebab-slug>-<feature-name>.md` where `<letter>` is `a`, `b`, `c`, etc. - one letter per sub-feature, alphabetical.
+- Slugs: lowercase kebab-case, ≤ 60 chars.
+
+## PRD index structure
+
+```markdown
+# PRD-<###>: <Module Name>
+
+> **Status:** Backlog | In Work | Shipped
+> **Priority:** P0 | P1 | P2 | P3
+> **Effort:** XS | S | M | L | XL
+
+## Overview
+
+<What this module does and why it exists.>
+
+## Goals
+
+- <Specific outcome the module achieves>
+
+## Non-Goals
+
+- <What this module explicitly does NOT do>
+
+## Features
+
+| Sub-PRD | Feature | Status |
+|---|---|---|
+| `prd-<###>a-<slug>-<feature>` (project-relative target: `./prd-<###>a-<slug>-<feature>.md`) | <Feature name> | Draft |
+
+## Acceptance Criteria
+
+| ID | Given | When | Then |
+|---|---|---|---|
+| AC-1 | <starting state> | <action> | <observable, testable result> |
+
+## Definition of Done checklist
+
+- Inherits `Definition of Done revision <n>` (project-relative target: `../../../knowledge/private/standards/definition-of-done.md`) when the project has one.
+- <Any PRD-specific done items>
+
+## Contract dependencies
+
+- `CTR-<###> revision <n>` (project-relative target: `<relative-link>`) - <shared behavior and verification owners>.
+
+## Related
+
+- [knowledge doc or ADR]
+```
+
+## Sub-PRD structure
+
+Each sub-PRD (`prd-<###><letter>-<slug>-<feature>.md`) covers one discrete sub-feature. Keep it scoped. A sub-PRD is a full PRD for its feature: goals, non-goals, user stories, acceptance criteria, implementation notes, open questions.
+
+## Lifecycle moves
+
+1. **Create** in `library/requirements/backlog/`.
+2. **Start work**: move entire `prd-<###>-<slug>/` folder to `library/requirements/in-work/`.
+3. **Ship**: move entire folder to `library/requirements/completed/`.
+
+Always move the full folder (index + sub-PRDs + `qa/`). Never update lifecycle in frontmatter alone.
+
+## QA folder
+
+Create `qa/` inside the PRD folder on creation (empty). Quality Review supplies independent findings through its actual available tools; saving a formal report requires an authorized report author with write capability. You own the structure; you never write QA content.

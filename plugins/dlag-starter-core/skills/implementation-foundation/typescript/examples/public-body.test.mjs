@@ -1,0 +1,11 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {readSmallJson,handlePublicValidation} from './public-body.mjs';
+const request=(body,type='application/json')=>new Request('https://example.test/validate',{method:'POST',headers:{'content-type':type},body});
+test('public contract returns only a validity DTO',async()=>{const response=await handlePublicValidation(request('{"title":"Alpha"}'));assert.equal(response.status,200);assert.deepEqual(await response.json(),{valid:true});assert.equal(response.headers.get('cache-control'),'no-store');});
+test('unsupported media has a distinct 415 response',async()=>{const response=await handlePublicValidation(request('title=Alpha','text/plain'));assert.equal(response.status,415);assert.deepEqual(await response.json(),{code:'CONTENT_TYPE'});});
+test('invalid JSON has 400 and never echoes body text',async()=>{const response=await handlePublicValidation(request('{"private marker"'));assert.equal(response.status,400);assert.deepEqual(await response.json(),{code:'INVALID_JSON'});});
+test('arrays, unknown fields and invalid title bounds reject',async()=>{for(const input of [[],{title:''},{title:'Alpha',owner_id:'user_a'},{title:'a'.repeat(121)}])assert.equal((await readSmallJson(request(JSON.stringify(input)))).code,'INVALID_TITLE');});
+test('stream byte bound is independent of declared content length',async()=>{const response=await handlePublicValidation(request('x'.repeat(4097)));assert.equal(response.status,413);assert.deepEqual(await response.json(),{code:'BODY_LIMIT'});});
+test('malformed UTF-8 is rejected',async()=>{const result=await readSmallJson(request(new Uint8Array([0xff])));assert.equal(result.code,'INVALID_JSON');});
+test('unsupported method has Allow POST',async()=>{const response=await handlePublicValidation(new Request('https://example.test/validate'));assert.equal(response.status,405);assert.equal(response.headers.get('allow'),'POST');});
