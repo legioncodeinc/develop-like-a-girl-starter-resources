@@ -7,7 +7,7 @@
 
 # Command reference
 
-These are the **14 public commands** shipped with the Starter Kit. Enter them inside Claude Code, not your terminal. Arguments after the command are your plain-language request. Use the full prefix so the correct kit and plugin are selected.
+These are the **14 public commands** shipped with the Starter Kit. Enter them in the desktop **Code** prompt box or an interactive Claude Code CLI session, not at a shell prompt. On desktop, type `/` to browse available commands. Arguments after the command are your plain-language request. Use the full prefix so the correct kit and plugin are selected.
 
 ## Core
 

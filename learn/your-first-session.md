@@ -9,7 +9,7 @@
 
 By the end of this walkthrough, you will have a small project brief and a first task you can approve. Use the example as practice, then replace it with your own idea.
 
-**Before you start:** [Install Core](install-and-verify.md) and open Claude Code in your project folder. This exercise can start in an empty folder and does not need a provider account.
+**Before you start:** [Install Core](install-and-verify.md). On desktop, open **Code**, choose **Local**, and select your project folder. In the terminal, open that folder and run `claude`. This exercise can start in an empty folder and does not need a provider account.
 
 ## 1. Describe one person and one job
 

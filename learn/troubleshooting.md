@@ -11,17 +11,23 @@ Start with the exact symptom and the smallest relevant check. Keep the command, 
 
 | What you see | What to check | What to do next |
 | --- | --- | --- |
-| `claude` is not found | Whether Claude Code is installed and available in your terminal. | Follow the [official setup guide](https://code.claude.com/docs/en/setup), open a fresh terminal, and check `claude --version`. |
+| `claude` is not found | Whether you are using the optional CLI route. Desktop Code does not require the CLI. | Follow the [official setup guide](https://code.claude.com/docs/en/setup), open a fresh terminal, and check `claude --version`. |
 | Marketplace cannot be added | Exact repository URL, connection, Git availability, and organization policy. | Compare the URL with [Install and verify](install-and-verify.md); keep the original error if it still fails. |
 | Repository not found or access denied | The repository URL and any authentication or network restriction in your environment. | Confirm the URL and connection before changing credentials or settings. |
-| A command is missing | Plugin installed, enabled, and available in this session. | Open `/plugin`, confirm Core and the chosen builder, then start a fresh session. |
+| A command is missing | Plugin installed, enabled, and available in this session. | For the screenshot route, check **Customize → Plugins → Yours** and the same Claude account, then start a fresh Code session. In the CLI, use `/plugin`. |
 | A builder says Core is missing | The matching `dlag-starter-core` installation. | Install and enable this kit’s Core explicitly. |
-| Slash command is rejected by the terminal | Whether you entered a session command at a shell prompt. | Launch `claude` in your project, then enter the slash command there. |
+| Slash command is rejected by the terminal | Whether you entered a session command at a shell prompt. | Use the desktop Code prompt, or launch `claude` in your project and enter the command in that session. |
 | A plan appears but no file exists | Whether you requested saving to a named path and the caller has write tools. | Request the precise Markdown destination; ask for the actual saved path. |
 | Build Lead returns a handoff instead of code | The task used the coordination workflow. | Send the accepted handoff to the appropriate implementation builder or Playbook. |
 | A local file exists but the app will not run | Missing framework setup, dependencies, or an actual error. | Supply the relevant error and project manifest; approve only the setup the task needs. |
 | Ready Check is incomplete | Missing candidate identity, check results, or required review evidence. | Supply the named gap for the same version of the work. |
 | A Specialist cannot be dispatched | Available delegation tools and installed role registration. | Ask the caller to use the bundled Playbook directly and state that direct use. |
+
+## Desktop marketplace added, but commands are missing
+
+**Sync** adds the catalog. You must still select **Add** for Core and the builder you want. Confirm them under **Customize → Plugins → Yours**, open Code with the same account, and start a new local session. Account plugin sync requires a supported Claude Code version and can be restricted by organization policy. API-key and cloud-provider sign-ins do not use Claude-account plugin sync. See [Anthropic's sync guidance](https://support.claude.com/en/articles/13837440-use-plugins-in-claude).
+
+For the private Advanced repository, use a GitHub account with access. If your layout differs, the [desktop plugin browser](https://code.claude.com/docs/en/desktop#install-plugins) is also available from **+ → Add plugins** in local Code sessions.
 
 ## Bring a useful problem report
 

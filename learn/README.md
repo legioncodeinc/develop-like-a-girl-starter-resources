@@ -12,7 +12,7 @@ Start with a small result you can see and explain. These guides take you from in
 ## Your first hour
 
 1. [Start here](start-here.md): understand the studio and choose your first outcome.
-2. [Install and verify](install-and-verify.md): add Core and the builder you need.
+2. [Install and verify](install-and-verify.md): follow the desktop screenshots or terminal route to add Core and your builder.
 3. [Your first session](your-first-session.md): turn a simple idea into a useful brief.
 4. Choose [a website](build-a-website.md), [an app](build-an-app.md), or [an existing project](improve-an-existing-project.md).
 

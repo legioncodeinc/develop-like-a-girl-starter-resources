@@ -10,9 +10,25 @@ The Starter Kit brings a repeatable way of working to React, React Router, Cloud
 
 ## Get your studio ready
 
-You need **Claude Code**, **Git**, and a folder for your project. This release supports Claude Code. If it is new to you, follow the [official setup instructions](https://code.claude.com/docs/en/setup), then return here. Your Claude usage and any hosting or provider services are separate from this repository.
+Use **Claude Code in the desktop app or terminal**, with your own project folder. Your Claude usage and any hosting or provider services are separate from this repository.
 
-Run these commands in your **terminal** to add the marketplace and install Core:
+### Install with Claude desktop
+
+Install the [Claude desktop app](https://code.claude.com/docs/en/desktop-quickstart), sign in, and follow this path:
+
+1. Open **Customize → Plugins**.
+2. Select **+ Add → Add marketplace → Add from a repository**.
+3. Enter `legioncodeinc/develop-like-a-girl-starter-resources`, select the matching repository, and click **Sync**.
+4. Add **dlag-starter-core** first, then **dlag-starter-website-builder**, **dlag-starter-app-builder**, or both.
+5. Open **Code**, select a **Local** environment and your project folder, then type `/` to find the kit commands.
+
+[![Claude desktop: open Plugins and choose Add marketplace](assets/screenshots/desktop/02-add-marketplace.jpeg)](learn/install-and-verify.md)
+
+[Follow the complete six-screenshot installation guide](learn/install-and-verify.md). The walkthrough shows exactly where to select the repository, sync it, and add your plugins. This desktop route does not require a separate CLI installation.
+
+### Prefer the terminal?
+
+With Claude Code CLI and Git installed, run:
 
 ```bash
 claude plugin marketplace add https://github.com/legioncodeinc/develop-like-a-girl-starter-resources.git
@@ -26,7 +42,7 @@ claude plugin install dlag-starter-website-builder@dlag-starter
 claude plugin install dlag-starter-app-builder@dlag-starter
 ```
 
-Core provides the shared foundation for either builder. Open Claude Code in **your own project folder**, then open `/plugin` to confirm your selected plugins are installed and enabled. [Installation and verification](learn/install-and-verify.md) includes the complete walkthrough and common fixes.
+Core provides the shared foundation for either builder. The [installation guide](learn/install-and-verify.md) explains verification, account sync, and the difference between desktop and terminal installation.
 
 ## Have your first conversation
 

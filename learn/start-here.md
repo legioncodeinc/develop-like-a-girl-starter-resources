@@ -25,9 +25,9 @@ Starter uses React and React Router on Cloudflare Workers, with Supabase for dat
 
 ## Prepare only what you need now
 
-Have Claude Code and Git available, choose your project folder, and bring your idea or existing files. Add approved logos, colors, and copy when they matter to the task. You can plan before creating hosting accounts or connecting payment services.
+Have the Claude desktop app or Claude Code CLI available, choose your project folder, and bring your idea or existing files. Git is needed for the terminal marketplace route. Add approved logos, colors, and copy when they matter to the task. You can plan before creating hosting accounts or connecting payment services.
 
-[Install and verify](install-and-verify.md), then start a session in your project folder and send:
+Follow the [desktop screenshot walkthrough or terminal instructions](install-and-verify.md), then open your project in desktop Code or the CLI and send:
 
 ```text
 /dlag-starter-core:get-started My goal is to help a visitor understand my service and
